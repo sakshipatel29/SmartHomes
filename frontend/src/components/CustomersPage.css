@@ -1,0 +1,173 @@
+.customers-page {
+    position: relative;
+    padding: 20px;
+}
+
+.page-title{
+    color: #395e85;
+}
+
+.section-title{
+    color: #395e85;
+    background-color: #b8d4ee;
+    font-size: 1.9rem;
+}
+
+.create-account-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: #395e85;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.create-account-button:hover {
+    background-color: #012851;
+}
+
+.orders-list {
+    list-style-type: none;
+    padding: 0;
+    color: #395e85;
+}
+
+.order-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.order-id {
+    margin-top: 0;
+    color: #003a79;
+}
+
+.order-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-product {
+    border-bottom: 1px solid #e9ecef;
+    padding: 8px 0;
+}
+
+.order-product:last-child {
+    border-bottom: none;
+}
+
+.edit-button, .delete-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.edit-button {
+    background-color: #395e85;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #062d4a;
+}
+
+.delete-button {
+    background-color: #d41d2f;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.signup-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content input, .popup-content select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.popup-content button:hover {
+    opacity: 0.9;
+}
+
+.popup-content button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+.popup-content button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.popup-content button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+.popup-content button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.cancel-button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    background-color: #395e85;
+}
+
+.update-order{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    background-color: #395e85;
+}

@@ -1,0 +1,151 @@
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9fafb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cart-container h1 {
+    font-size: 2.5rem;
+    color: #395e85;
+    margin-bottom: 40px;
+}
+
+.cart-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-container ul li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.cart-container ul li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cart-container ul li h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cart-container ul li p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.cart-container ul li ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.cart-container ul li ul li {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.quantity-controls {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.quantity-controls button {
+    background-color: #5a9ecf;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-controls button:hover {
+    background-color: #395e85;
+}
+
+.quantity-controls span {
+    font-size: 1.2rem;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.remove-button:hover {
+    background-color: #d32f2f;
+}
+
+.cart-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 40px;
+}
+
+.checkout-button {
+    background-color: #2a6c2c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.checkout-button:hover {
+    background-color: #103412;
+}
+
+.cart-container p {
+    font-size: 1.2rem;
+    color: #dd372b;
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 15px;
+    }
+
+    .cart-container h1 {
+        font-size: 2rem;
+    }
+
+    .cart-container ul li {
+        padding: 15px;
+    }
+
+    .quantity-controls button {
+        padding: 6px 12px;
+    }
+
+    .checkout-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
