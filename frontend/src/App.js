@@ -18,7 +18,8 @@ import InventoryManager from './components/InventoryManager';
 import SalesReport from './components/SalesReport';
 import ProductDetails from './components/ProductDetails';
 import SearchResults from './components/SearchResults';
-import CustomerService from './components/CustomerService';
+import OpenTicket from './components/OpenTicket';
+import TicketStatus from './components/TicketStatus';
 import './App.css';
 
 
@@ -44,8 +45,9 @@ const App = () => {
         <Route path="/inventory" element={<InventoryManager />} />
         <Route path="/report" element={<SalesReport />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path='/search' element={<SearchResults/>}/>
-        <Route path='/service' element={<CustomerService/>}/>
+        <Route path='/search' element={<SearchResults />}/>
+        <Route path='/service' element={<OpenTicket />}/>
+        <Route path='/ticketstatus' element={<TicketStatus />}/>
       </Routes>
     </Router>
     </div>

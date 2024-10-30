@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [type, setType] = useState(null);
+  const [showServiceDropdown, setShowServiceDropdown] = useState(false);
   const navigate = useNavigate();
   const storedUserType = localStorage.getItem("type");
   const location = useLocation();
@@ -75,6 +76,28 @@ const Navbar = () => {
             <Link to="/orders">Orders</Link>
             </button>
         )}
+        <li className="dropdown">
+        <button
+          className="buttons dropdown-toggle"
+          onClick={() => setShowServiceDropdown(!showServiceDropdown)}
+        >
+          Customer Service
+        </button>
+        {showServiceDropdown && (
+          <ul className="dropdown-menu">
+            <li>
+              <button onClick={() => navigate("/service")}>
+                Open a Ticket
+              </button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/ticketstatus")}>
+                Status of Ticket
+              </button>
+            </li>
+          </ul>
+        )}
+      </li>
         <li>
             <button
             className="buttons"
