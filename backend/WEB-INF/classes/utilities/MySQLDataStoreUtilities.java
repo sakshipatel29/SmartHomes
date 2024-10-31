@@ -422,7 +422,7 @@ public JSONArray getAccessoriesForProduct(int productId) {
             order.put("discount", rs.getDouble("discount"));
             order.put("totalSales", rs.getDouble("total_sales"));
             order.put("storeId", rs.getInt("store_id"));
-            order.put("orderStatus", rs.getString("order_status")); // Adding order status
+            order.put("orderStatus", rs.getString("order_status"));
             orders.put(order);
         }
     } catch (SQLException e) {
@@ -466,7 +466,7 @@ public boolean updateOrder(String orderId, JSONObject newOrderData) {
         pstmt.setDouble(12, newOrderData.getDouble("discount"));
         pstmt.setDouble(13, newOrderData.getDouble("totalSales"));
         pstmt.setInt(14, newOrderData.getInt("storeId"));
-        pstmt.setString(15, newOrderData.getString("orderStatus")); // Adding order status
+        pstmt.setString(15, newOrderData.getString("orderStatus"));
         pstmt.setString(16, orderId);
 
         int affectedRows = pstmt.executeUpdate();
@@ -726,7 +726,7 @@ public void saveAllProducts(Map<Integer, JSONObject> productMap) {
 
     public boolean isOrderDelivered(String orderId) {
     boolean isDelivered = false;
-    try (Connection conn = getConnection()) {  // Use try-with-resources for connection
+    try (Connection conn = getConnection()) { 
         String query = "SELECT status FROM orders WHERE order_id = ?";
         PreparedStatement pst = conn.prepareStatement(query);
         pst.setString(1, orderId);
@@ -741,7 +741,7 @@ public void saveAllProducts(Map<Integer, JSONObject> productMap) {
 }
 
 public void insertTicket(String ticketNumber, String orderId, String decision, String description) {
-    try (Connection conn = getConnection()) {  // Use try-with-resources for connection
+    try (Connection conn = getConnection()) { 
         String query = "INSERT INTO tickets (ticket_number, order_id, decision, description) VALUES (?, ?, ?, ?)";
         PreparedStatement pst = conn.prepareStatement(query);
         pst.setString(1, ticketNumber);
@@ -756,7 +756,7 @@ public void insertTicket(String ticketNumber, String orderId, String decision, S
 
 public String getTicketDecision(String ticketNumber) {
     String decision = null;
-    try (Connection conn = getConnection()) {  // Use try-with-resources for connection
+    try (Connection conn = getConnection()) { 
         String query = "SELECT decision FROM tickets WHERE ticket_number = ?";
         PreparedStatement pst = conn.prepareStatement(query);
         pst.setString(1, ticketNumber);

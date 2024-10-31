@@ -18,7 +18,7 @@ public class getOrderServlet extends HttpServlet {
 
         try {
             MySQLDataStoreUtilities dbUtil = new MySQLDataStoreUtilities();
-            JSONArray orders = dbUtil.getAllOrders();  // This will now include 'order_status' for each order.
+            JSONArray orders = dbUtil.getAllOrders(); 
             out.print(orders.toString());
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

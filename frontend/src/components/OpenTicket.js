@@ -15,29 +15,34 @@ const OpenTicket = () => {
       formData.append('orderId', orderId);
       formData.append('description', description);
       if (selectedFile) {
-        formData.append('image', selectedFile); // Append the file
+        formData.append('image', selectedFile);
       }
-
+  
       const response = await axios.post('http://localhost:8080/myservlet/ticket', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
+  
+      console.log('Server response:', response.data);
 
-      console.log(response.data); // Log the entire response for debugging
-
-      if (response.data.status === 'success') {
-        setTicketNumber(response.data.message); // This should be your ticket number
+      const responseText = response.data;
+      const ticketNumberMatch = responseText.match(/Ticket Number: (TICKET-\d+)/);
+  
+      if (ticketNumberMatch) {
+        const extractedTicketNumber = ticketNumberMatch[1];
+        setTicketNumber(extractedTicketNumber);
         setView('ticketOpened');
+        alert(`Ticket created successfully. Ticket Number: ${extractedTicketNumber}`);
       } else {
-        alert(response.data.message || "An error occurred."); // Check if message is defined
+        alert('Ticket created, but no ticket number found in the response.');
       }
     } catch (error) {
       console.error('Error opening ticket:', error);
-      alert(error.response?.data?.message || "An error occurred while opening the ticket. Please try again.");
+      alert(error.response?.data || "An error occurred while opening the ticket. Please try again.");
     }
   };
-
+  
   return (
     <div>
       <h2>Customer Service</h2>
@@ -73,3 +78,6 @@ const OpenTicket = () => {
 };
 
 export default OpenTicket;
+
+
+

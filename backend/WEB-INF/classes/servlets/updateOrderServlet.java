@@ -16,18 +16,14 @@ public class updateOrderServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            // Reading and parsing JSON data from the request body
             String newOrderData = request.getReader().lines().reduce("", (accumulator, actual) -> accumulator + actual);
             JSONObject newOrderJson = new JSONObject(newOrderData);
 
-            // Retrieving orderId and checking for orderStatus
             String orderId = newOrderJson.getString("orderId");
 
-            // Updating the order in the database
             MySQLDataStoreUtilities dbUtil = new MySQLDataStoreUtilities();
             boolean orderUpdated = dbUtil.updateOrder(orderId, newOrderJson);
 
-            // Responding to client based on the result of the update operation
             if (orderUpdated) {
                 response.setStatus(HttpServletResponse.SC_OK);
                 out.print(new JSONObject().put("status", "Order updated successfully").toString());
