@@ -98,7 +98,7 @@ const Navbar = () => {
           </ul>
         )}
       </li>
-        <li>
+      <li>
             <button
             className="buttons"
             onClick={() => {
@@ -106,6 +106,26 @@ const Navbar = () => {
             }}
             >
             Cart
+            </button>
+        </li>
+        <li>
+            <button
+            className="buttons"
+            onClick={() => {
+                navigate("/productsearch");
+            }}
+            >
+            Product Search
+            </button>
+        </li>
+        <li>
+            <button
+            className="buttons"
+            onClick={() => {
+                navigate("/semanticsearch");
+            }}
+            >
+            Review Search
             </button>
         </li>
         <li>

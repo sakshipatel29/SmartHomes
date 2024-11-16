@@ -20,7 +20,11 @@ import ProductDetails from './components/ProductDetails';
 import SearchResults from './components/SearchResults';
 import OpenTicket from './components/OpenTicket';
 import TicketStatus from './components/TicketStatus';
+import SemanticSearch from './components/SemanticSearch';
+import ProductSearch from './components/ProductSearch';
+import ProductDetail from './components/ProductDetail';
 import './App.css';
+
 
 
 const App = () => {
@@ -48,6 +52,9 @@ const App = () => {
         <Route path='/search' element={<SearchResults />}/>
         <Route path='/service' element={<OpenTicket />}/>
         <Route path='/ticketstatus' element={<TicketStatus />}/>
+        <Route path='/semanticsearch' element={<SemanticSearch />}/>
+        <Route path='/productsearch' element={<ProductSearch />}/>
+        <Route path="/product/:productId" component={ProductDetail} />
       </Routes>
     </Router>
     </div>
